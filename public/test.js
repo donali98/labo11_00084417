@@ -93,7 +93,6 @@ tasks(); //mostrar todoas las tareas
              /*Metod para actualizar */
              //buscar un producto
              let updates = document.querySelectorAll(".update");
-
              updates.forEach(item=>{
                  item.addEventListener("click",function(e){
                      e.preventDefault();
@@ -103,6 +102,7 @@ tasks(); //mostrar todoas las tareas
                      }).then(function(response){
                          return response.text();
                      }).then(function(data){
+                       try{
                          console.log(data);
                          let task = JSON.parse(data);
                          let formUpdateTask = document.querySelector('#updateTask');
@@ -111,6 +111,11 @@ tasks(); //mostrar todoas las tareas
                          formUpdateTask.dateU.value = task.date_task;
                          console.log(formUpdateTask.taskU);
                          tasks();
+                       }
+                       catch(e ){
+                         console.log(e);
+                       }
+
                      });
                  });
              });

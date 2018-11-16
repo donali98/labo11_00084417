@@ -3,7 +3,7 @@
   /*****************Requeriremos los archivos necesarios para poder trabajar*****************************************/
   require('../models/Task.php'); //Modelo de la tabla task
   require('../interfaces/metodos.php'); //Interface metodos
-  require('../connection/Connection.php'); //Clase para realizar la conexión
+  require('../connecion/Connecion.php'); //Clase para realizar la conexión
  /******************************************************************************************************************/
   class TaskDao implements metodos
   {
